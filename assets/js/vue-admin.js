@@ -1078,7 +1078,7 @@ let Currency = dokan_get_lib('Currency');
                 "title": this.__("Vendors will be able to generate coupon codes", "dokan-lite"),
                 "thumbnail": dokan.urls.assetsUrl + '/images/premium/service-06@2x.png'
             }, {
-                "title": this.__("Earning, Selling and Commission Reports & Statement", "dokan-lite"),
+                "title": this.__("Earnings, Selling and Commission Reports & Statement", "dokan-lite"),
                 "thumbnail": dokan.urls.assetsUrl + '/images/premium/service-07@2x.png'
             }, {
                 "title": this.__("24/7 super fast premium customer support for you", "dokan-lite"),

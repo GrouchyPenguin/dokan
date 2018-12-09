@@ -497,7 +497,7 @@ msgid "Store Setup"
 msgstr ""
 
 #: classes/seller-setup-wizard.php:181 templates/settings/store-form.php:125
-msgid "Store Product Per Page"
+msgid "Store Products Per Page"
 msgstr ""
 
 #: classes/seller-setup-wizard.php:187
@@ -620,7 +620,7 @@ msgid "Please select AT LEAST ONE category"
 msgstr ""
 
 #: classes/template-products.php:352
-msgid "No product found !"
+msgid "No products found!"
 msgstr ""
 
 #: classes/template-settings.php:70 classes/template-settings.php:74
@@ -3670,7 +3670,7 @@ msgid "View report menu"
 msgstr ""
 
 #: includes/functions.php:2536
-msgid "Vuew review menu"
+msgid "View review menu"
 msgstr ""
 
 #: includes/functions.php:2537
@@ -4193,7 +4193,7 @@ msgid "More Products"
 msgstr ""
 
 #: includes/wc-functions.php:1025
-msgid "No product has been found!"
+msgid "No products have been found!"
 msgstr ""
 
 #: includes/wc-legacy-functions.php:61
@@ -4563,7 +4563,7 @@ msgid "Vendors will be able to generate coupon codes"
 msgstr ""
 
 #: src/admin/pages/Premium.vue:281
-msgid "Earning, Selling and Commission Reports & Statement"
+msgid "Earnings, Selling and Commission Reports & Statement"
 msgstr ""
 
 #: src/admin/pages/Premium.vue:285
@@ -4714,17 +4714,17 @@ msgstr ""
 #: templates/dashboard/big-counter-widget.php:21
 #: templates/products/products-listing-row.php:60
 #: templates/products/products-listing.php:91
-msgid "Earning"
+msgid "Earnings"
 msgstr ""
 
 #: templates/dashboard/big-counter-widget.php:25
-msgid "Pageview"
+msgid "Pageviews"
 msgstr ""
 
 #: templates/dashboard/big-counter-widget.php:29 templates/my-orders.php:27
 #: templates/orders/details.php:21 templates/orders/listing.php:47
 #: templates/orders/listing.php:67 templates/sub-orders.php:25
-msgid "Order"
+msgid "Orders"
 msgstr ""
 
 #: templates/dashboard/edit-account.php:44
@@ -5446,7 +5446,7 @@ msgid "Search Products"
 msgstr ""
 
 #: templates/products/new-product-single.php:8
-msgid "Access Denied, No product found"
+msgid "Access Denied, No products found"
 msgstr ""
 
 #: templates/products/new-product-single.php:32
@@ -5706,7 +5706,7 @@ msgid "Add new product"
 msgstr ""
 
 #: templates/products/products-listing.php:163
-msgid "No product found"
+msgid "No products found"
 msgstr ""
 
 #: templates/products/products-listing.php:186

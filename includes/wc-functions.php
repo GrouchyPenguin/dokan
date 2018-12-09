@@ -496,7 +496,7 @@ add_filter( 'pre_user_display_name', 'dokan_seller_displayname' );
  * @param int $per_page
  * @return \WP_Query
  */
-function dokan_get_featured_products( $per_page = 9, $seller_id = '' ) {
+function dokan_get_featured_products( $per_page = 13, $seller_id = '' ) {
 
     $args = array(
         'posts_per_page'      => $per_page,
@@ -522,7 +522,7 @@ function dokan_get_featured_products( $per_page = 9, $seller_id = '' ) {
  * @param int $per_page
  * @return \WP_Query
  */
-function dokan_get_latest_products( $per_page = 9, $seller_id = '' ) {
+function dokan_get_latest_products( $per_page = 12, $seller_id = '' ) {
 
     $args = array(
         'posts_per_page'      => $per_page,
@@ -546,7 +546,7 @@ function dokan_get_latest_products( $per_page = 9, $seller_id = '' ) {
  * @param int $per_page
  * @return \WP_Query
  */
-function dokan_get_best_selling_products( $per_page = 8, $seller_id = '' ) {
+function dokan_get_best_selling_products( $per_page = 12, $seller_id = '' ) {
 
     $args = array(
         'post_type'           => 'product',
@@ -588,7 +588,7 @@ function check_more_seller_product_tab(  ) {
  * @param int $per_page
  * @return \WP_Query
  */
-function dokan_get_top_rated_products( $per_page = 8 , $seller_id = '') {
+function dokan_get_top_rated_products( $per_page = 12, $seller_id = '') {
 
     $args = array(
         'post_type'             => 'product',
@@ -613,7 +613,7 @@ function dokan_get_top_rated_products( $per_page = 8 , $seller_id = '') {
  * @param type $paged
  * @return \WP_Query
  */
-function dokan_get_on_sale_products( $per_page = 10, $paged = 1, $seller_id = '' ) {
+function dokan_get_on_sale_products( $per_page = 12, $paged = 1, $seller_id = '' ) {
     // Get products on sale
     $product_ids_on_sale = wc_get_product_ids_on_sale();
 
@@ -1000,7 +1000,7 @@ function dokan_get_more_products_from_seller( $seller_id = 0, $posts_per_page = 
     }
 
     if ( !abs( $posts_per_page ) ) {
-        $posts_per_page = 4;
+        $posts_per_page = 6;
     }
     $args = array(
         'post_type'      => 'product',

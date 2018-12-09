@@ -14,8 +14,8 @@
 
 <div class="dokan-info">
     <strong><?php _e( 'Note:', 'dokan-lite' ); ?></strong>
-    <?php _e( 'This order has products from multiple vendors. So we divided this order into multiple vendor orders.
-    Each order will be handled by their respective vendor independently.', 'dokan-lite' ); ?>
+    <?php _e( 'This order has products from multiple vendors/sellers. The order has been divided into multiple vendor orders.
+    Each order will be handled by their respective vendor independently.  If a sub-order has status \'pending,\' then the charge for that sub-order has not completed--please contact us to arrange payment.', 'dokan-lite' ); ?>
 </div>
 
 <table class="shop_table my_account_orders table table-striped">

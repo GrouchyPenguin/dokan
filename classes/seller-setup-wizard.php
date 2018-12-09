@@ -161,7 +161,7 @@ class Dokan_Seller_Setup_Wizard extends Dokan_Setup_Wizard {
     public function dokan_setup_store() {
         $store_info      = $this->store_info;
 
-        $store_ppp       = isset( $store_info['store_ppp'] ) ? esc_attr( $store_info['store_ppp'] ) : 10;
+        $store_ppp       = isset( $store_info['store_ppp'] ) ? esc_attr( $store_info['store_ppp'] ) : 12;
         $show_email      = isset( $store_info['show_email'] ) ? esc_attr( $store_info['show_email'] ) : 'no';
         $address_street1 = isset( $store_info['address']['street_1'] ) ? $store_info['address']['street_1'] : '';
         $address_street2 = isset( $store_info['address']['street_2'] ) ? $store_info['address']['street_2'] : '';
@@ -178,7 +178,7 @@ class Dokan_Seller_Setup_Wizard extends Dokan_Setup_Wizard {
         <form method="post" class="dokan-seller-setup-form">
             <table class="form-table">
                 <tr>
-                    <th scope="row"><label for="store_ppp"><?php _e( 'Store Product Per Page', 'dokan-lite' ); ?></label></th>
+                    <th scope="row"><label for="store_ppp"><?php _e( 'Store Products Per Page', 'dokan-lite' ); ?></label></th>
                     <td>
                         <input type="text" id="store_ppp" name="store_ppp" value="<?php echo $store_ppp; ?>" />
                     </td>

@@ -959,7 +959,7 @@ function dokan_get_page_url( $page, $context = 'dokan' ) {
  */
 function dokan_edit_product_url( $product_id ) {
     if ( get_post_field( 'post_status', $product_id ) == 'publish' ) {
-        return trailingslashit( get_permalink( $product_id ) ). 'edit/';
+//        return trailingslashit( get_permalink( $product_id ) ). 'edit/';
     }
 
     $new_product_url = dokan_get_navigation_url('products');
@@ -1774,9 +1774,9 @@ function dokan_get_shipping_processing_times() {
     $times = array(
         '' => __( 'Ready to ship in...', 'dokan-lite' ),
         '1' => __( '1 business day', 'dokan-lite' ),
-        '2' => __( '1-2 business day', 'dokan-lite' ),
-        '3' => __( '1-3 business day', 'dokan-lite' ),
-        '4' => __( '3-5 business day', 'dokan-lite' ),
+        '2' => __( '1-2 business days', 'dokan-lite' ),
+        '3' => __( '1-3 business days', 'dokan-lite' ),
+        '4' => __( '3-5 business days', 'dokan-lite' ),
         '5' => __( '1-2 weeks', 'dokan-lite' ),
         '6' => __( '2-3 weeks', 'dokan-lite' ),
         '7' => __( '3-4 weeks', 'dokan-lite' ),
@@ -2548,7 +2548,7 @@ function dokan_get_all_caps() {
             'dokan_view_order_menu'          => __( 'View order menu', 'dokan-lite' ),
             'dokan_view_coupon_menu'         => __( 'View coupon menu', 'dokan-lite' ),
             'dokan_view_report_menu'         => __( 'View report menu', 'dokan-lite' ),
-            'dokan_view_review_menu'         => __( 'Vuew review menu', 'dokan-lite' ),
+            'dokan_view_review_menu'         => __( 'View review menu', 'dokan-lite' ),
             'dokan_view_withdraw_menu'       => __( 'View withdraw menu', 'dokan-lite' ),
             'dokan_view_store_settings_menu' => __( 'View store settings menu', 'dokan-lite' ),
             'dokan_view_store_payment_menu'  => __( 'View payment settings menu', 'dokan-lite' ),

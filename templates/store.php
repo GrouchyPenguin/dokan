@@ -87,7 +87,7 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
             <?php } else { ?>
 
-                <p class="dokan-info"><?php _e( 'No products were found of this vendor!', 'dokan-lite' ); ?></p>
+                <p class="dokan-info"><?php _e( 'No product are available from this seller at this time.', 'dokan-lite' ); ?></p>
 
             <?php } ?>
         </div>

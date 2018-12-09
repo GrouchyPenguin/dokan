@@ -124,10 +124,10 @@
         <?php do_action( 'dokan_settings_after_store_name', $current_user, $profile_info ); ?>
 
         <div class="dokan-form-group">
-            <label class="dokan-w3 dokan-control-label" for="dokan_store_ppp"><?php _e( 'Store Product Per Page', 'dokan-lite' ); ?></label>
+            <label class="dokan-w3 dokan-control-label" for="dokan_store_ppp"><?php _e( 'Store Products Per Page', 'dokan-lite' ); ?></label>
 
             <div class="dokan-w5 dokan-text-left">
-                <input id="dokan_store_ppp" value="<?php echo $store_ppp; ?>" name="dokan_store_ppp" placeholder="10" class="dokan-form-control" type="number">
+                <input id="dokan_store_ppp" value="<?php echo $store_ppp; ?>" name="dokan_store_ppp" placeholder="12" class="dokan-form-control" type="number">
             </div>
         </div>
          <!--address-->
@@ -152,19 +152,19 @@
                 <input id="setting_phone" value="<?php echo $phone; ?>" name="setting_phone" placeholder="<?php _e( '+123456..', 'dokan-lite' ); ?>" class="dokan-form-control input-md" type="text">
             </div>
         </div>
-
+<!--
         <div class="dokan-form-group">
-            <label class="dokan-w3 dokan-control-label"><?php _e( 'Email', 'dokan-lite' ); ?></label>
+            <label class="dokan-w3 dokan-control-label">< ?php _e( 'Email', 'dokan-lite' ); ?></label>
             <div class="dokan-w5 dokan-text-left">
                 <div class="checkbox">
                     <label>
                         <input type="hidden" name="setting_show_email" value="no">
-                        <input type="checkbox" name="setting_show_email" value="yes"<?php checked( $show_email, 'yes' ); ?>> <?php _e( 'Show email address in store', 'dokan-lite' ); ?>
+                        <input type="checkbox" name="setting_show_email" value="yes"< ?php checked( $show_email, 'yes' ); ?>> < ?php _e( 'Show email address in store', 'dokan-lite' ); ?>
                     </label>
                 </div>
             </div>
         </div>
-
+-->
         <div class="dokan-form-group">
             <label class="dokan-w3 dokan-control-label"><?php _e( 'More products', 'dokan-lite' ); ?></label>
             <div class="dokan-w5 dokan-text-left">

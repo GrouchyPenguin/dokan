@@ -175,7 +175,7 @@ class Dokan_Vendor {
             'icon'                    => 0,
             'gravatar'                => 0,
             'show_more_ptab'          => 'yes',
-            'store_ppp'               => 10,
+            'store_ppp'               => 12,
             'enable_tnc'              => 'off',
             'store_tnc'               => '',
             'show_min_order_discount' => 'no',
@@ -411,10 +411,10 @@ class Dokan_Vendor {
         $per_page = (int) $this->get_info_part( 'store_ppp' );
 
         if ( ! $per_page ) {
-            return 10;
+            return 13;
         }
 
-        return $per_page;
+        return $per_page + 1;
     }
 
     /**

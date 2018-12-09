@@ -18,15 +18,15 @@
             <div class="count"><?php echo wc_price( $earning ); ?></div>
         </li>
         <li>
-            <div class="title"><?php _e( 'Earning', 'dokan-lite' ); ?></div>
+            <div class="title"><?php _e( 'Earnings', 'dokan-lite' ); ?></div>
             <div class="count"><?php echo dokan_get_seller_earnings( dokan_get_current_user_id() ); ?></div>
         </li>
         <li>
-            <div class="title"><?php _e( 'Pageview', 'dokan-lite' ); ?></div>
+            <div class="title"><?php _e( 'Pageviews', 'dokan-lite' ); ?></div>
             <div class="count"><?php echo dokan_number_format( $pageviews ); ?></div>
         </li>
         <li>
-            <div class="title"><?php _e( 'Order', 'dokan-lite' ); ?></div>
+            <div class="title"><?php _e( 'Orders', 'dokan-lite' ); ?></div>
             <div class="count">
                 <?php
                 $status = dokan_withdraw_get_active_order_status();

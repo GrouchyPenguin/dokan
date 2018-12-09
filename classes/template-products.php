@@ -349,7 +349,7 @@ class Dokan_Template_Products {
             $post_id = isset( $_POST['dokan_product_id'] ) ? intval( $_POST['dokan_product_id'] ) : 0;
 
             if ( ! $post_id ) {
-                $errors[] = __( 'No product found !', 'dokan-lite' );
+                $errors[] = __( 'No products found', 'dokan-lite' );
             }
 
             self::$errors = apply_filters( 'dokan_can_edit_product', $errors );

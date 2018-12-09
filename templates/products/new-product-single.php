@@ -5,7 +5,7 @@ global $post;
 $from_shortcode = false;
 
 if ( !isset( $post->ID ) && ! isset( $_GET['product_id'] ) ) {
-    wp_die( __( 'Access Denied, No product found', 'dokan-lite' ) );
+    wp_die( __( 'Access Denied, No products found', 'dokan-lite' ) );
 }
 
 if( isset( $post->ID ) && $post->ID && $post->post_type == 'product' ) {

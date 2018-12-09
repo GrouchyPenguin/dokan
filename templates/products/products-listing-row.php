@@ -57,7 +57,7 @@
         }
         ?>
     </td>
-    <td data-title="<?php _e( 'Earning', 'dokan-lite' ); ?>">
+    <td data-title="<?php _e( 'Earnings', 'dokan-lite' ); ?>">
         <?php
         if ( $product->get_type() == 'simple' ) {
             echo wc_price( dokan_get_earning_by_product( $product->get_id(), get_current_user_id() ) );

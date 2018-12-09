@@ -283,7 +283,7 @@ class Dokan_REST_Store_Controller extends WP_REST_Controller {
     public function format_collection_response( $response, $request, $total_items ) {
 
         // Store pagation values for headers then unset for count query.
-        $per_page  = (int) ( ! empty( $request['per_page'] ) ? $request['per_page'] : 20 );
+        $per_page  = (int) ( ! empty( $request['per_page'] ) ? $request['per_page'] : 18 );
         $page      = (int) ( ! empty( $request['page'] ) ? $request['page'] : 1 );
         $max_pages = ceil( $total_items / $per_page );
 

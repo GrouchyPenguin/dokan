@@ -88,7 +88,7 @@
                                     <th><?php _e( 'SKU', 'dokan-lite' ); ?></th>
                                     <th><?php _e( 'Stock', 'dokan-lite' ); ?></th>
                                     <th><?php _e( 'Price', 'dokan-lite' ); ?></th>
-                                    <th><?php _e( 'Earning', 'dokan-lite' ); ?></th>
+                                    <th><?php _e( 'Earnings', 'dokan-lite' ); ?></th>
                                     <th><?php _e( 'Type', 'dokan-lite' ); ?></th>
                                     <th><?php _e( 'Views', 'dokan-lite' ); ?></th>
                                     <th><?php _e( 'Date', 'dokan-lite' ); ?></th>
@@ -99,7 +99,7 @@
                                 $pagenum       = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
                                 $post_statuses = array( 'publish', 'draft', 'pending', 'future' );
                                 $args = array(
-                                    'posts_per_page' => 10,
+                                    'posts_per_page' => 12,
                                     'paged'          => $pagenum,
                                     'author'         => get_current_user_id(),
                                     'tax_query'      => array(
@@ -160,7 +160,7 @@
                                 } else {
                                 ?>
                                     <tr>
-                                        <td colspan="7"><?php _e( 'No product found', 'dokan-lite' ); ?></td>
+                                        <td colspan="7"><?php _e( 'No products found', 'dokan-lite' ); ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

@@ -391,7 +391,7 @@ abstract class Dokan_REST_Controller extends WP_REST_Controller {
         }
 
         // Store pagation values for headers then unset for count query.
-        $per_page = (int) ( ! empty( $request['per_page'] ) ? $request['per_page'] : 20 );
+        $per_page = (int) ( ! empty( $request['per_page'] ) ? $request['per_page'] : 18 );
         $page     = (int) ( ! empty( $request['page'] ) ? $request['page'] : 1 );
 
         $response->header( 'X-WP-Total', (int) $total_items );
