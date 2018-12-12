@@ -1031,7 +1031,7 @@ function dokan_get_more_products_from_seller( $seller_id = 0, $posts_per_page = 
 
         woocommerce_product_loop_end();
     } else {
-        _e( 'No product has been found!', 'dokan' );
+        _e( 'No products have been found!', 'dokan' );
     }
 
     wp_reset_postdata();
