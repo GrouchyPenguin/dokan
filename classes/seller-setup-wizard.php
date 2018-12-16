@@ -219,17 +219,17 @@ class Dokan_Seller_Setup_Wizard extends Dokan_Setup_Wizard {
                 </tr>
 
                 <?php do_action( 'dokan_seller_wizard_store_setup_after_address_field', $this ); ?>
-
+<!--
                 <tr>
-                    <th scope="row"><label for="show_email"><?php esc_html_e( 'Email', 'dokan-lite' ); ?></label></th>
+                    <th scope="row"><label for="show_email">< ?php esc_html_e( 'Email', 'dokan-lite' ); ?></label></th>
                     <td class="checkbox">
-                        <input type="checkbox" name="show_email" id="show_email" class="switch-input" value="1" <?php echo ( $show_email == 'yes' ) ? 'checked="true"' : ''; ?>>
+                        <input type="checkbox" name="show_email" id="show_email" class="switch-input" value="1" < ?php echo ( $show_email == 'yes' ) ? 'checked="true"' : ''; ?>>
                         <label for="show_email">
-                            <?php esc_html_e( 'Show email address in store', 'dokan-lite' ); ?>
+                            < ?php esc_html_e( 'Show email address in store', 'dokan-lite' ); ?>
                         </label>
                     </td>
                 </tr>
-
+-->
                 <?php do_action( 'dokan_seller_wizard_store_setup_field', $this ); ?>
 
             </table>
