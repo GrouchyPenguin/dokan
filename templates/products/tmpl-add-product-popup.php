@@ -130,9 +130,9 @@
                             ?>
                         </div>
                     <?php endif; ?>
-
+<!--
                     <div class="dokan-form-group">
-                        <?php
+                        < ?php
                         require_once DOKAN_LIB_DIR.'/class.taxonomy-walker.php';
                         $drop_down_tags = wp_dropdown_categories( array(
                             'show_option_none' => __( '', 'dokan-lite' ),
@@ -152,7 +152,7 @@
                         echo str_replace( '<select', '<select data-placeholder="'.__( 'Select product tags', 'dokan-lite' ).'" multiple="multiple" ', $drop_down_tags ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
                         ?>
                     </div>
-
+-->
                     <div class="dokan-form-group">
                         <textarea name="post_excerpt" id="" class="dokan-form-control" rows="5" placeholder="<?php esc_attr_e( 'Enter some short description about this product...' , 'dokan-lite' ) ?>"></textarea>
                     </div>

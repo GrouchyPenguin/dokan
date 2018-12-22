@@ -241,13 +241,13 @@
                                             ?>
                                         </div>
                                     <?php endif; ?>
-
+<!--
                                     <div class="dokan-form-group">
-                                        <?php
+                                        < ?php
                                         require_once DOKAN_LIB_DIR.'/class.taxonomy-walker.php';
 
                                         $selected_tag   = dokan_posted_input( 'product_tag', true );
-                                        $selected_tag  = empty( $selected_tag ) ? array() : $selected_tag;
+                                        $selected_tag  = em pty( $selected_tag ) ? array() : $selected_tag;
 
                                         $drop_down_tags = wp_dropdown_categories( array(
                                             'show_option_none' => __( '', 'dokan-lite' ),
@@ -267,7 +267,7 @@
                                         echo str_replace( '<select', '<select data-placeholder="'.esc_attr__( 'Select product tags', 'dokan-lite' ).'" multiple="multiple" ', $drop_down_tags ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
                                         ?>
                                     </div>
-                                </div>
+-->                                </div>
                             </div>
 
                             <div class="dokan-form-group">

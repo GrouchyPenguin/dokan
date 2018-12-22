@@ -293,10 +293,10 @@ if ( ! $from_shortcode ) {
                                             ?>
                                         </div>
                                     <?php endif; ?>
-
+<!--
                                     <div class="dokan-form-group">
-                                        <label for="product_tag" class="form-label"><?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
-                                        <?php
+                                        <label for="product_tag" class="form-label">< ?php esc_html_e( 'Tags', 'dokan-lite' ); ?></label>
+                                        < ?php
                                         require_once DOKAN_LIB_DIR.'/class.taxonomy-walker.php';
                                         $term = wp_get_post_terms( $post_id, 'product_tag', array( 'fields' => 'ids') );
                                         $selected = ( $term ) ? $term : array();
@@ -319,7 +319,7 @@ if ( ! $from_shortcode ) {
 
                                         ?>
                                     </div>
-                                </div><!-- .content-half-part -->
+  -->                              </div><!-- .content-half-part -->
 
                                 <div class="content-half-part featured-image">
 
