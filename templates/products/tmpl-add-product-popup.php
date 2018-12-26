@@ -40,7 +40,7 @@
                 </div>
                 <div class="content-half-part dokan-product-field-content">
                     <div class="dokan-form-group">
-                        <input type="text" class="dokan-form-control" name="post_title" placeholder="<?php esc_attr_e( 'Product name..', 'dokan-lite' ); ?>">
+                        <input type="text" class="dokan-form-control" name="post_title" placeholder="<?php esc_attr_e( 'Product name...', 'dokan-lite' ); ?>">
                     </div>
 
                     <div class="dokan-clearfix">
@@ -154,7 +154,7 @@
                     </div>
 -->
                     <div class="dokan-form-group">
-                        <textarea name="post_excerpt" id="" class="dokan-form-control" rows="5" placeholder="<?php esc_attr_e( 'Enter some short description about this product...' , 'dokan-lite' ) ?>"></textarea>
+                        <textarea name="post_excerpt" id="" class="dokan-form-control" rows="5" placeholder="<?php esc_attr_e( 'Enter a short description about this product...' , 'dokan-lite' ) ?>"></textarea>
                     </div>
                 </div>
             </div>

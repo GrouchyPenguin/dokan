@@ -2606,7 +2606,7 @@ msgid "%qty% variations"
 msgstr ""
 
 #: includes/class-assets.php:620
-msgid "No Result Found"
+msgid "No Results Found"
 msgstr ""
 
 #: includes/class-assets.php:623
@@ -5452,7 +5452,7 @@ msgstr ""
 #: templates/products/new-product-single.php:161
 #: templates/products/new-product.php:147
 #: templates/products/tmpl-add-product-popup.php:43
-msgid "Product name.."
+msgid "Product name..."
 msgstr ""
 
 #: templates/products/new-product-single.php:163
@@ -5689,7 +5689,7 @@ msgid "Next &raquo;"
 msgstr ""
 
 #: templates/products/tmpl-add-product-popup.php:157
-msgid "Enter some short description about this product..."
+msgid "Enter a short description about this product..."
 msgstr ""
 
 #: templates/products/tmpl-add-product-popup.php:164
@@ -5865,7 +5865,7 @@ msgid "Terms And Conditions"
 msgstr ""
 
 #: templates/store.php:90
-msgid "No products were found of this vendor!"
+msgid "No products are available from this vendor!"
 msgstr ""
 
 #: templates/sub-orders.php:12
