@@ -133,7 +133,9 @@
                             ?>
                         </div>
                     <?php endif; ?>
+
 <!--
+//has this been removed from origin?????
                     <div class="dokan-form-group">
                         < ?php
                         require_once DOKAN_LIB_DIR.'/class.taxonomy-walker.php';
@@ -156,6 +158,7 @@
                         ?>
                     </div>
 -->
+
                     <div class="dokan-form-group">
                         <textarea name="post_excerpt" id="" class="dokan-form-control" rows="5" placeholder="<?php esc_attr_e( 'Enter a short description about this product...' , 'dokan-lite' ) ?>"></textarea>
                     </div>

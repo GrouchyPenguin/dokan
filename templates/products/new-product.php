@@ -268,7 +268,9 @@
                                         echo str_replace( '<select', '<select data-placeholder="'.esc_attr__( 'Select product tags', 'dokan-lite' ).'" multiple="multiple" ', $drop_down_tags ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
                                         ?>
                                     </div>
--->                                </div>
+-->
+                                    <?php do_action( 'dokan_new_product_after_product_tags' ); ?>
+                                </div>
                             </div>
 
                             <div class="dokan-form-group">
