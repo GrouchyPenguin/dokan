@@ -2010,7 +2010,8 @@ function dokan_get_avatar_url( $url, $id_or_email, $args ) {
 
     // see if there is a user_avatar meta field
     $user_avatar = get_user_meta( $user->ID, 'dokan_profile_settings', true );
-    $gravatar_id = isset( $user_avatar['gravatar'] ) ? $user_avatar['gravatar'] : 0;
+    $gravatar_id = ! empty( $user_avatar['gravatar_id'] ) ? $user_avatar['gravatar_id'] : 0;
+    $gravatar_id = ! empty( $user_avatar['gravatar'] ) ? $user_avatar['gravatar'] : $gravatar_id;
 
     if ( empty( $gravatar_id ) ) {
         return $url;
@@ -2657,7 +2658,7 @@ function dokan_get_category_wise_seller_commission( $product_id, $category_id = 
     }
 
     if ( $terms ) {
-        $category_commision = get_woocommerce_term_meta( $term_id, 'per_category_admin_commission', true );
+        $category_commision = get_term_meta( $term_id, 'per_category_admin_commission', true );
     }
 
     if ( ! empty( $category_commision ) ) {
@@ -2689,7 +2690,7 @@ function dokan_get_category_wise_seller_commission_type( $product_id, $category_
     }
 
     if ( $terms ) {
-        $category_commision = get_woocommerce_term_meta( $term_id, 'per_category_admin_commission_type', true );
+        $category_commision = get_term_meta( $term_id, 'per_category_admin_commission_type', true );
     }
 
     return $category_commision;
@@ -3153,13 +3154,14 @@ function dokan_is_store_open( $user_id ) {
     $open_days  = isset( $store_info['dokan_store_time'] ) ? $store_info['dokan_store_time'] : '';
     $today      = strtolower( date( 'l' ) );
 
-    if ( ! is_array( $open_days ) && ! isset( $open_days[ $today ] ) ) {
+    if ( ! isset( $open_days[ $today ] ) ) {
         return false;
     }
 
     $schedule = $open_days[ $today ];
+    $status   = isset( $schedule['open'] ) ? $schedule['open'] : $schedule['status'];
 
-    if ( 'open' === $schedule['open'] ) {
+    if ( 'open' === $status ) {
         if ( empty( $schedule['opening_time'] ) || empty( $schedule['closing_time'] ) ) {
             return true;
         }

@@ -100,7 +100,7 @@ function dokan_process_product_meta( $post_id, $data = [] ) {
             $unique_sku = wc_product_has_unique_sku( $post_id, $new_sku );
 
             if ( ! $unique_sku ) {
-                $woocommerce_errors[] = ( __( 'Product SKU must be unique.', 'dokan-lite' ) );
+                $woocommerce_errors[] = __( 'Product SKU must be unique', 'dokan-lite' );
             } else {
                 update_post_meta( $post_id, '_sku', $new_sku );
             }
@@ -118,7 +118,7 @@ function dokan_process_product_meta( $post_id, $data = [] ) {
         $attribute_values = array();
 
         foreach ( $data['attribute_values'] as $values ) {
-            $attribute_values[] = array_map( 'sanitize_text_field', (array) $values );
+            $attribute_values[] = $values;
         }
 
         if ( isset( $data['attribute_visibility'] ) ) {
@@ -148,12 +148,12 @@ function dokan_process_product_meta( $post_id, $data = [] ) {
 
                     // Select based attributes - Format values (posted values are slugs)
                     if ( is_array( $attribute_values[ $i ] ) ) {
-                        $values = array_map( 'wc_clean', $attribute_values[ $i ] );
+                        $values = $attribute_values[ $i ]; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
                         // Text based attributes - Posted values are term names, wp_set_object_terms wants ids or slugs.
                     } else {
                         $values     = array();
-                        $raw_values = array_map( 'wc_sanitize_term_text_based', explode( WC_DELIMITER, $attribute_values[ $i ] ) );
+                        $raw_values = explode( WC_DELIMITER, $attribute_values[ $i ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
                         foreach ( $raw_values as $value ) {
                             $term = get_term_by( 'name', $value, $attribute_names[ $i ] );
@@ -246,7 +246,9 @@ function dokan_process_product_meta( $post_id, $data = [] ) {
 
         // Dates
         update_post_meta( $post_id, '_sale_price_dates_from', $date_from ? strtotime( $date_from ) : '' );
-        update_post_meta( $post_id, '_sale_price_dates_to', $date_to ? strtotime( $date_to ) : '' );
+
+        // error_log( var_export( date('y-m-d H:i:s'), true ) );
+        update_post_meta( $post_id, '_sale_price_dates_to', $date_to ? strtotime( '+ 23 hours', strtotime( $date_to ) ): '' );
 
         if ( $date_to && ! $date_from ) {
             $date_from = date( 'Y-m-d' );
@@ -260,13 +262,6 @@ function dokan_process_product_meta( $post_id, $data = [] ) {
             update_post_meta( $post_id, '_price', wc_format_decimal( $sale_price ) );
         } else {
             update_post_meta( $post_id, '_price', '' === $regular_price ? '' : wc_format_decimal( $regular_price ) );
-        }
-
-        if ( $date_to && strtotime( $date_to ) < strtotime( 'NOW', current_time( 'timestamp' ) ) ) {
-            update_post_meta( $post_id, '_price', '' === $regular_price ? '' : wc_format_decimal( $regular_price ) );
-            update_post_meta( $post_id, '_sale_price', '' );
-            update_post_meta( $post_id, '_sale_price_dates_from', '' );
-            update_post_meta( $post_id, '_sale_price_dates_to', '' );
         }
     }
 
