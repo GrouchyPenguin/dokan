@@ -6,10 +6,8 @@
  */
 ?>
 <?php
-    $gravatar_id    = ! empty( $profile_info['gravatar_id'] ) ? $profile_info['gravatar_id'] : 0;
-    $gravatar_id    = ! empty( $profile_info['gravatar'] ) ? $profile_info['gravatar'] : $gravatar_id;
-    $banner_id      = ! empty( $profile_info['banner_id'] ) ? $profile_info['banner_id'] : 0;
-    $banner_id      = ! empty( $profile_info['banner'] ) ? $profile_info['banner'] : $banner_id;
+    $gravatar_id    = ! empty( $profile_info['gravatar'] ) ? $profile_info['gravatar'] : 0;
+    $banner_id      = ! empty( $profile_info['banner'] ) ? $profile_info['banner'] : 0;
     $storename      = isset( $profile_info['store_name'] ) ? $profile_info['store_name'] : '';
     $store_ppp      = isset( $profile_info['store_ppp'] ) ? $profile_info['store_ppp'] : '';
     $phone          = isset( $profile_info['phone'] ) ? $profile_info['phone'] : '';
@@ -48,7 +46,7 @@
     }
 
     $dokan_appearance         = dokan_get_option( 'store_header_template', 'dokan_appearance', 'default' );
-    $show_store_open_close    = dokan_get_option( 'store_open_close', 'dokan_general', 'on' );
+    $show_store_open_close    = dokan_get_option( 'store_open_close', 'dokan_appearance', 'on' );
     $dokan_days               = array( 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' );
     $all_times                = isset( $profile_info['dokan_store_time'] ) ? $profile_info['dokan_store_time'] : '';
     $dokan_store_time_enabled = isset( $profile_info['dokan_store_time_enabled'] ) ? $profile_info['dokan_store_time_enabled'] : '';
@@ -84,8 +82,8 @@
                          * @since 2.4.10
                          */
                         $general_settings = get_option( 'dokan_general', [] );
-                        $banner_width     = ! empty( $general_settings['store_banner_width'] ) ? $general_settings['store_banner_width'] : 625;
-                        $banner_height    = ! empty( $general_settings['store_banner_height'] ) ? $general_settings['store_banner_height'] : 300;
+                        $banner_width     = dokan_get_option( 'store_banner_width', 'dokan_appearance', 625 );
+                        $banner_height    = dokan_get_option( 'store_banner_width', 'dokan_appearance', 625 );
 
                         $help_text = sprintf(
                             __('Upload a banner for your store. Banner size is (%sx%s) pixels.', 'dokan-lite' ),
@@ -338,7 +336,7 @@
     .store-open-close select.dokan-form-control {
         width: auto;
     }
-    @media only screen and ( max-width: 400px ) {
+    @media only screen and ( max-width: 415px ) {
         .store-open-close label:first-child {
             width: 100%;
             text-align: left;
