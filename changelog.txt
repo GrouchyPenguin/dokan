@@ -1,3 +1,26 @@
+v2.9.22 -> October 03, 2019
+-----------------------------------
+-   **fix***   Remove duplicate inpute filed in dokan admin settings form
+-   **fix***   Make commissison value to 0 if no product found
+-   **fix***   Attribute value's are swapped after changing the order of the attributes
+
+v2.9.21 -> September 24, 2019
+-----------------------------------
+-   **fix***   If state is not found for a country in store settings, remove the state field on reload
+-   **fix***   Only show vendor's own uploaded media to a vendor.
+-   **fix***   Add required attribute for various input field in dokan_post_input_box function.
+-   **fix***   Calculate commission for item by quantity when the commission is set to flat.
+-   **Tweak*** Introduce Dokan_Commission class to calculate admin and vendor's commission.
+-   **Tweak*** Remove unnecessary placeholder in admin commission field.
+
+v2.9.20 -> August 23, 2019
+------------------------------------
+-   **Fix***   Geolocation map settings value is not saving
+-   **Fix***   Fix warning in vendor dashboard widget when seller setup wizard is not run
+-   **Fix***   Store banner height in vendor settings page it not honouring the saved settings
+-   **Fix***   Conflict with avada theme fution builder
+-   **Tweak*** Use WordPress backend date format while printing date in approved and cancelled withdraw request
+
 v2.9.19 -> July 29, 2019
 ------------------------------------
 -   **Fix***    Split orders created from admin dashboard
