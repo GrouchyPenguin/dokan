@@ -58,7 +58,7 @@ if ( ! $from_shortcode ) {
 }
 
 if ( ! empty( $_GET['errors'] ) ) {
-    Dokan_Template_Products::$errors = $_GET['errors'];
+    Dokan_Template_Products::$errors = array_map( 'sanitize_text_field', wp_unslash( $_GET['errors'] ) );
 }
 
 /**
@@ -243,6 +243,8 @@ do_action( 'dokan_dashboard_wrap_before', $post, $post_id );
                                             </div>
                                         </div><!-- .sale-schedule-container -->
                                     </div>
+
+                                    <?php do_action( 'dokan_product_edit_after_pricing', $post, $post_id ); ?>
 
                                     <?php if ( dokan_get_option( 'product_category_style', 'dokan_selling', 'single' ) == 'single' ): ?>
                                         <div class="dokan-form-group">

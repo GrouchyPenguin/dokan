@@ -15,15 +15,15 @@
     <ul class="list-inline">
          <li>
             <div class="title"><?php esc_html_e( 'Sales', 'dokan-lite' ); ?></div>
-            <div class="count"><?php echo wc_price( $earning ); ?></div>
+            <div class="count"><?php echo wp_kses_post( wc_price( $earning ) ); ?></div>
         </li>
         <li>
             <div class="title"><?php esc_html_e( 'Earnings', 'dokan-lite' ); ?></div>
-            <div class="count"><?php echo dokan_get_seller_earnings( dokan_get_current_user_id() ); ?></div>
+            <div class="count"><?php echo wp_kses_post( dokan_get_seller_earnings( dokan_get_current_user_id() ) ); ?></div>
         </li>
         <li>
             <div class="title"><?php esc_html_e( 'Pageviews', 'dokan-lite' ); ?></div>
-            <div class="count"><?php echo dokan_number_format( $pageviews ); ?></div>
+            <div class="count"><?php echo esc_html( dokan_number_format( esc_attr( $pageviews ) ) ); ?></div>
         </li>
         <li>
             <div class="title"><?php esc_html_e( 'Orders', 'dokan-lite' ); ?></div>
