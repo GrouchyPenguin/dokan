@@ -5,9 +5,9 @@ Tags: WooCommerce multivendor marketplace, multi vendor marketplace, multi selle
 Requires at least: 4.4
 Tested up to: 5.3.2
 WC requires at least: 3.0
-WC tested up to: 3.8.1
+WC tested up to: 4.0.1
 Requires PHP: 5.6
-Stable tag: 2.9.31
+Stable tag: 3.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ The pioneer multi-vendor plugin for WordPress. Start your own marketplace in min
 
 = DOKAN MULTIVENDOR MARKETPLACE PLUGIN FOR WORDPRESS =
 
-👉 Official Free Demo Link: [Official Demo](https://wedevs.com/dokan/demo)
+👉 Official Free Demo Link: [Official Demo](https://dokan.wedevsdemos.com/)
 👉 Learn More About Dokan(PRO): [All The Features of Dokan](https://wedevs.com/dokan/features/)
 
 = POWERED BY WooCommerce =
@@ -291,6 +291,53 @@ A. Just install and activate the PRO version without deleting the free plugin. A
 
 == Changelog ==
 
+= v3.0.3 (April 03, 2020) =
+
+ - **Fix:** Clear caches on product update #804
+ - **Fix:** Vendor is not receiving email for new order #803
+ - **Fix:** Remove weForms promotion from admin setup wizard #798
+
+= v3.0.2 (March 23, 2020) =
+
+ - **Fix:** Unable to remove attributes in vendor product edit page #637
+ - **Fix:** Feature image is not saving on quick edit
+ - **Fix:** Vendor image issue #769
+ - **Fix:** Set vendor eamil on new vendor creation #787
+ - **Fix:** Return content from shotcode instead of being outputting #752
+ - **Fix:** Map still showing on vendor dashabord settings page even if there is no API key
+ - **Fix:** Product type not saving when quick edit #767
+ - **Fix:** Render withdraw methods dynamically in setup wizard #771
+ - **Fix:** Show vendor email to admin and actual vendor #773
+ - **Fix:** Product type error in dokan_save_product function
+ - **Fix:** Admin is unable to see the setup wizard on new dokan installation when WooCommerce is not installed #783
+ - **Fix:** Add missing add_meta_query method in dokan REST API #788
+ - **Fix:** Only render map if api key is availabe in store settings page #774
+ - **Feat:** Add dokan_get_all_cap_labels function #781
+ - **Improvement:** Added group description to exporters and updated privacy policy guide to drop use of deprecated classes #755
+ - **Improvement:** dokan_get_shipping_processing_times function #785
+ - **Improvement:** Add filter on withdraw export csv args #786
+ - **Improvement:** Get correct product thumbnail size in vendor product list page #795
+
+= v3.0.1 (February 07, 2020) =
+
+ - **Fix:** Fixed yoast seo causing conflict issue in single store page
+ - **Fix:** Permission issue fixed for shop manager
+ - **Fix:** Handle sales price error if its greater than regular price or empty
+ - **Fix:** Change placholder text for filter by customer to registered customer
+
+= v3.0.0 (February 03, 2020) =
+
+ - **Fix:** Add mapbox option in dokan admin setup wizard
+ - **Fix:** Pass order object into woocommerce_order_item_{type}_html hook
+ - **Fix:** Allow vendor to update store terms and condition with REST API #714
+ - **Fix:** If show_email is truned off don't show the eamil in REST API response #748
+ - **Fix:** Remove space while generating user_name via dokan_generate_username function #749
+ - **Fix:** If a product is deleted and no vendor is found for that product display (no name) in backend order listing page #746
+ - **Improvement:** Store listing filter styles so that it works with almost any theme
+ - **Improvement:** Show notice in dokan admin setup wizard if minimum PHP version is not met for WooCommerce
+ - **Improvement:** If dokan pro doesn't exist but commmision type is found in database, ignore that saved commission type #746
+ - **Improvement:** Code quality and performance
+
 = v2.9.31 (January 14, 2020) =
 
  - **Fix:** Add option to set dokan store listing page for rendering all stores
@@ -428,5 +475,5 @@ For the changelog history, view the full [changelog.txt](https://github.com/weDe
 
 == Upgrade Notice ==
 
-= 2.6.0 =
-**Important Update** This update is compatible with WooCommerce 3.0. Make sure to backup and read full [changelog](https://docs.wedevs.com/docs/dokan/changelog/) for more details.
+= 3.0.0 =
+**Important Update** This update changes code structures for improving performance. Make sure to take backup and read the changlogs first before upgrade process.

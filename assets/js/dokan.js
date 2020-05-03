@@ -384,14 +384,26 @@ jQuery(function($) {
                     };
 
                     $.post( dokan_refund.ajax_url, data, function( response ) {
-                        if ( true === response.success ) {
-                            window.alert( response.data );
-                            dokan_seller_meta_boxes_order_items.reload_items();
-                        } else {
-                            window.alert( response.data );
-                            dokan_seller_meta_boxes_order_items.unblock();
+                        response.data.message ? window.alert( response.data.message ) : null;
+                        dokan_seller_meta_boxes_order_items.reload_items();
+                    }).fail( function ( jqXHR ) {
+                        var message = [];
+
+                        if ( jqXHR.responseJSON.data ) {
+                            var data = jqXHR.responseJSON.data;
+
+                            if ( $.isArray( data ) ) {
+                                message = jqXHR.responseJSON.data.map( function ( item ) {
+                                    return item.message;
+                                } );
+                            } else {
+                                message.push( data );
+                            }
                         }
-                    });
+
+                        window.alert( message.join( ' ' ) );
+                        dokan_seller_meta_boxes_order_items.unblock();
+                    } );
                 } else {
                     dokan_seller_meta_boxes_order_items.unblock();
                 }
@@ -985,6 +997,9 @@ jQuery(function($) {
                         if ( $parent.is( '.taxonomy' ) ) {
                             $parent.find( 'select, input[type=text]' ).val( '' );
                             $( 'select.dokan_attribute_taxonomy' ).find( 'option[value="' + $parent.data( 'taxonomy' ) + '"]' ).removeAttr( 'disabled' );
+                        } else {
+                            $parent.find( 'select, input[type=text]' ).val( '' );
+                            $parent.hide();
                         }
 
                         Dokan_Editor.attribute.reArrangeAttribute();
@@ -1432,6 +1447,54 @@ jQuery(function($) {
             } );
 
         }, 750 ) );
+
+        function debounce_delay( callback, ms ) {
+            var timer   = 0;
+            return function() {
+                var context = this, args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                  callback.apply(context, args);
+                }, ms || 0);
+            };
+        }
+
+        $('body').on( 'keyup', '.dokan-product-sales-price, .dokan-product-regular-price', debounce_delay( function(evt) {
+            evt.preventDefault();
+            var product_price           = $( 'input.dokan-product-regular-price' ).val();
+            var sale_price_wrap         = $( 'input.dokan-product-sales-price' );
+            var sale_price              = sale_price_wrap.val();
+            var sale_price_input_div    = sale_price_wrap.parent( 'div.dokan-input-group' );
+            var sale_price_input_msg    = "<span class='error'>" + dokan.i18n_sales_price_error + "</span>";
+            var sale_price_parent_div   = sale_price_input_div.parent( 'div.sale-price' ).find( 'span.error' );
+
+            if ( '' == product_price ) {
+
+                sale_price_parent_div.remove();
+                sale_price_input_div.after( sale_price_input_msg );
+
+                sale_price_wrap.val('');
+                setTimeout(function(){
+                    sale_price_parent_div.remove();
+                }, 5000);
+
+            } else if( parseFloat( product_price ) <= parseFloat( sale_price ) ) {
+
+                sale_price_parent_div.remove();
+                sale_price_input_div.after( sale_price_input_msg );
+
+                sale_price_wrap.val('');
+                setTimeout(function(){
+                    sale_price_parent_div.remove();
+                }, 5000);
+
+            } else {
+
+                sale_price_parent_div.remove();
+
+            }
+
+        } ,600 ) );
 
     });
 
@@ -2128,6 +2191,63 @@ jQuery(function($) {
     };
 
     bulkItemsSelection.init();
+
+    
+
+    $( '.product-cat-stack-dokan li.has-children' ).on( 'click', '> a span.caret-icon', function ( e ) {
+        e.preventDefault();
+        var self = $( this ),
+            liHasChildren = self.closest( 'li.has-children' );
+
+        if ( !liHasChildren.find( '> ul.children' ).is( ':visible' ) ) {
+            self.find( 'i.fa' ).addClass( 'fa-rotate-90' );
+            if ( liHasChildren.find( '> ul.children' ).hasClass( 'level-0' ) ) {
+                self.closest( 'a' ).css( { 'borderBottom': 'none' } );
+            }
+        }
+
+        liHasChildren.find( '> ul.children' ).slideToggle( 'fast', function () {
+            if ( !$( this ).is( ':visible' ) ) {
+                self.find( 'i.fa' ).removeClass( 'fa-rotate-90' );
+
+                if ( liHasChildren.find( '> ul.children' ).hasClass( 'level-0' ) ) {
+                    self.closest( 'a' ).css( { 'borderBottom': '1px solid #eee' } );
+                }
+            }
+        } );
+    } );
+
+    $( '.store-cat-stack-dokan li.has-children' ).on( 'click', '> a span.caret-icon', function ( e ) {
+        e.preventDefault();
+        var self = $( this ),
+            liHasChildren = self.closest( 'li.has-children' );
+
+        if ( !liHasChildren.find( '> ul.children' ).is( ':visible' ) ) {
+            self.find( 'i.fa' ).addClass( 'fa-rotate-90' );
+            if ( liHasChildren.find( '> ul.children' ).hasClass( 'level-0' ) ) {
+                self.closest( 'a' ).css( { 'borderBottom': 'none' } );
+            }
+        }
+
+        liHasChildren.find( '> ul.children' ).slideToggle( 'fast', function () {
+            if ( !$( this ).is( ':visible' ) ) {
+                self.find( 'i.fa' ).removeClass( 'fa-rotate-90' );
+
+                if ( liHasChildren.find( '> ul.children' ).hasClass( 'level-0' ) ) {
+                    self.closest( 'a' ).css( { 'borderBottom': '1px solid #eee' } );
+                }
+            }
+        } );
+    } );
+
+    $(document).ready(function(){
+        var selectedLi = $('#cat-drop-stack ul').find( 'a.selected' );
+        selectedLi.css({ fontWeight: 'bold' });
+
+        selectedLi.parents('ul.children').each( function( i, val ) {
+            $( val ).css({ display: 'block' });
+        });
+    });
 
 
 })(jQuery);
