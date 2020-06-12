@@ -403,6 +403,13 @@ class Settings {
                     'desc'    => __( 'Minimum balance required to make a withdraw request. Leave blank to set no minimum limits.', 'dokan-lite' ),
                     'default' => '50',
                     'type'    => 'text',
+                ),
+                'exclude_cod_payment' => array(
+                    'name'    => 'exclude_cod_payment',
+                    'label'   => __( 'Exclude COD Payments', 'dokan-lite' ),
+                    'desc'    => __( 'If an order is paid with Cash on Delivery (COD), then exclude that payment from vendor balance.', 'dokan-lite' ),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
                 )
             ),
             'dokan_pages' => array(
@@ -514,6 +521,21 @@ class Settings {
                     'desc'    => __( 'Enable showing Store Sidebar From Your Theme.', 'dokan-lite' ),
                     'type'    => 'checkbox',
                     'default' => 'off'
+                ),
+                'hide_vendor_info' => array(
+                    'name'    => 'hide_vendor_info',
+                    'label'   => __( 'Hide Vendor Info', 'dokan' ),
+                    'type'    => 'multicheck',
+                    'default' => array(
+                        'email'   => '',
+                        'phone'   => '',
+                        'address' => '',
+                    ),
+                    'options' => array(
+                        'email'   => __( 'Email Address', 'dokan' ),
+                        'phone'   => __( 'Phone Number', 'dokan' ),
+                        'address' => __( 'Store Address', 'dokan' ),
+                    )
                 ),
             ),
             'dokan_privacy' => array(
