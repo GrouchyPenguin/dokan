@@ -1,3 +1,7 @@
+ = v3.0.5.1 (July 11, 2020) =
+
+- [fix] Add dwh mods
+
  = v3.0.5 (June 11, 2020) =
 
 - [new] Exclude cash on delivery payments from vendor withdrawal balance (COD)
